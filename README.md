@@ -25,7 +25,7 @@ Das Template wurde mit [TeX Live](https://www.tug.org/texlive/) entwickelt. Dahe
 *   Visual Studio Code
     *   Extensions: [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) und [Spell Check](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-german)
     *   Im Template befindet sich .vscode/settings.json für Einstellungen für diese beiden Extensions (wird automatisch erkannt und eingelesen)
-    * Die PDF lässt sich mittels Shorcut builden (Default: Strg+shift+B)
+    * Die PDF lässt sich mittels Shortcut builden (Default: Strg+shift+B)
     * Hier mal ein Einblick:![](images/vsc_latex_workshop.png)
 
 
@@ -41,7 +41,7 @@ Ein gutes Beispiel hierfür ist die [Serie von Overleaf](https://de.overleaf.com
 ### Projekt
 
 Über GitHub kann das Repository zu einem eigenen Projekt geforkt werden (erfordert einen Account) oder als .zip heruntergeladen werden. 
-Dies kann dann als lokales Projekt entpackt oder aber auf Overleaf hochzuladen werden.
+Dies kann dann als lokales Projekt entpackt oder aber auf Overleaf hochgeladen werden.
 Als erster Schritt ist es sinnvoll aus dem Projekt in dem aktuellen Zustand eine PDF erfolgreich zu generieren.
 
 
@@ -50,7 +50,8 @@ Als erster Schritt ist es sinnvoll aus dem Projekt in dem aktuellen Zustand eine
 Die ersten Änderungen sollten in der environment/config.tex getätigt werden. 
 Hier können Informationen zur Arbeit hinterlegt und Konfigurationen bezüglich der Darstellung getroffen werden.
 Somit kann das Titelblatt auf ein modernes Aussehen konfiguriert werden und sieht wie folgt aus
-![]()
+![](images/titlepage_modern.png)
+
 Des Weiteren dient diese Datei um das Präambel manuell um arbeitsspezifische Einstellungen zu erweitern.
 
 
@@ -162,7 +163,7 @@ Diese werden in environment/acronym.tex definiert:
 Im Text können die Abkürzungen folgendermaßen verwendet werden
 
 ```latex
-% Gibt bei der ersten Verwendung die Langform m aus und die Abkürzung in Klammern.
+% Gibt bei der ersten Verwendung die Langform aus und die Abkürzung in Klammern.
 % Danach die Abkürzung. 
 % \gls{key}
 \gls{RDBMS} 
@@ -180,15 +181,15 @@ Im Text können die Abkürzungen folgendermaßen verwendet werden
 \Glspl{RDBMS} 
 -> Relationale Datenbankmanagementsysteme (RDBMS)
 
-% Gibt unabhängig vorheriger Verwendung nur die Langform aus.
+% Gibt unabhängig von vorheriger Verwendung nur die Langform aus.
 \acrlong{RDBMS} 
 -> relationales Datenbankmanagementsystem
 
-% Gibt unabhängig vorheriger Verwendung die Abkürzung aus.
+% Gibt unabhängig von vorheriger Verwendung die Abkürzung aus.
 \acrshort{RDBMS} 
 -> RDBMS
 
-% Gibt unabhängig vorheriger Verwendung die Langform und anschließender Abkürzung aus.
+% Gibt unabhängig von vorheriger Verwendung die Langform und anschließender Abkürzung aus.
 \acrfull{RDBMS} 
 -> relationales Datenbankmanagementsystem (RDBMS)
 ```
@@ -200,7 +201,7 @@ Die Angaben in dem .bib-Format sollten immer überprüft werden
 
 *   Alle [Pflichtfelder](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes.php) ausfüllen
 *   Bei der Angabe von Pages sollte "--" stehen
-*   Wenn man für einzelne Literaturverweise eine andere Bezeichnung für "Bd" (Band) und "Nr" (Nummer) haben möchte kann man die Felder in eine Notiz umformen, die am Ende des Eintrags angezeigt wird.
+*   Wenn man für einzelne Literaturverweise eine andere Bezeichnung für "Bd" (Band) und "Nr" (Nummer) haben möchte, kann man die Felder in eine Notiz umformen, die am Ende des Eintrags angezeigt wird.
 *   Der Leitfaden erfordert, dass bei Zitaten aus Sammelbändern sowohl das direkt zitierte Werk, als auch das Sammelwerk ins Literaturverzeichnis aufgenommen werden. Das Template bietet hierfür keine Hilfestellung. Man muss folglich beide Einträge manuell vornehmen.
   
 
@@ -208,6 +209,6 @@ Die Angaben in dem .bib-Format sollten immer überprüft werden
 Kontakt
 =======
 
-Wenn Probleme auftreten können gerne GitHub-Issues aufgemacht werden.
+Wenn Probleme auftreten, können gerne GitHub-Issues aufgemacht werden.
 
 Für Fragen stehe ich gerne zur Verfügung und bin über die E-Mail-Adresse [leonrheinert@gmail.com](mailto:leonrheinert@gmail.com) erreichbar.
