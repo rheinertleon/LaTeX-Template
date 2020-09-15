@@ -1,0 +1,10 @@
+# Alle Referenzen ignorieren
+references/
+
+# Alle generierten Dateien ignorieren
+main.*
+bin/*
+
+# Quelldatei von obiger Selektion ausschließen
+!main.tex
+

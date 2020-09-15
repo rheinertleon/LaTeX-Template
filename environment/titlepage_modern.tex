@@ -1,0 +1,94 @@
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~ Modern Title Page ~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+\makeatletter
+\begin{titlepage} 
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	
+	\center 
+  \vspace*{1cm}
+  
+	%------------------------------------------------%
+	%	Überschriften
+	%------------------------------------------------%
+	
+	\textsc{\LARGE ASW -- Berufsakademie Saarland}\\[1.5cm]
+	
+	\textsc{\Large \varArbeit}\\[0.5cm]
+	
+	\textsc{\large \varStudiengang}\\[0.5cm]
+	
+	%------------------------------------------------%
+	%	Titel
+	%------------------------------------------------%
+	
+	\HRule\\[1cm]
+	
+	{\huge\bfseries\@title}\\[0.6cm]
+	
+	\HRule\\[1cm]
+	
+	%------------------------------------------------%
+	%	Autor und Matrikelnummer
+	%------------------------------------------------%
+
+	\textsc{\Large \@author}\\[0.5cm]
+
+	\textsc{\large Matrikelnummer: \varMartrikelnummer}\\[2cm]
+
+	%------------------------------------------------%
+	%	Betreuer
+	%------------------------------------------------%
+	
+	\begin{minipage}{0.43\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Betrieblicher Betreuer}\\
+			\varBetrBetreuer
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.43\textwidth}
+		\begin{flushright}
+			\large
+			\textit{ASW-Gutachter}\\
+			\varASWGutachter
+		\end{flushright}
+	\end{minipage}
+	
+	\vspace{0.5cm}
+
+	%------------------------------------------------%
+	%	Firmen- und ASW-Logo
+	%------------------------------------------------%
+
+	\begin{figure}[!h]
+		\center
+		\ifdefined\varCompanyLogoFile
+			\minipage{0.3\textwidth}
+				\includegraphics[width=\linewidth]{\varCompanyLogoFile}
+			\endminipage
+			\minipage{0.3\textwidth}
+				\hfill
+			\endminipage
+		\fi
+		\minipage{0.3\textwidth}
+		  	\includegraphics[width=\linewidth]{titlepage/logo_asw}
+		\endminipage
+	\end{figure}
+		
+	%------------------------------------------------%
+	%	Datum
+	%------------------------------------------------%
+	
+	\vfill\vfill
+
+	\large\varEingereichtAm
+	
+	\vfill
+	 
+	%------------------------------------------------%
+
+	
+\end{titlepage}
+\makeatother

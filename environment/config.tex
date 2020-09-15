@@ -1,0 +1,77 @@
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~ Erweiterung des Präambel ~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% Shortcuts für häufig wiederkehrende Begriffe
+\newcommand{\asw}{ASW -- Berufsakademie Saarland}
+
+% Wenn nach den 3 Ebenen nach \subsubsection eine weitere Gliederungsebene benötigt wird
+\newcommand{\paragraphheader}[1]{\paragraph{#1}\mbox{}\\}
+
+% Vordefinierte Arten der Fußnoten. 
+% Die Struktur kann an dieser Stelle geändert werden und betrifft jede Verwendung im gesamten Dokument,
+% was praktisch sein kann, falls der Betreuer oder Gutachter zb. die ausgeschriebene Variante von "Vgl." bevorzugt.
+\newcommand{\vgl}[2]{\footcite[Vgl.][#2]{#1}}
+\newcommand{\footrefnote}[2]{\footnote{Für das Thema #1 siehe Kapitel~\ref{#2}}}
+\newcommand{\wholesection}[2]{\footcite[Für den gesamten Abschnitt vgl.][#2]{#1}}
+
+% Zur Generierung von Blindtext - kann entfernt werden
+\usepackage{lipsum}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~ Informationen über die Arbeit ~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+\title{\LaTeX-Template für wissenschaftliche Arbeiten an der \asw}
+\author{Max Mustermann}
+\date{\today}
+
+% Weitere Variablen innerhalb von LaTeX für das Titelblatt
+\newcommand{\varMartrikelnummer}{IFXXXXXX}
+\newcommand{\varArbeit}{Bachelorarbeit}
+\newcommand{\varStudiengang}{Wirtschaftsinformatik}
+\newcommand{\varUnternehmen}{Dummy Company}
+\newcommand{\varBetrBetreuer}{Erika Musterfrau}
+\newcommand{\varASWGutachter}{Prof. Dr. Dieter Hofbauer}
+\newcommand{\varEingereichtAm}{01. Januar 2020}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Customizing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% Titelblatt: environment/titlepage | environment/titlepage_modern
+\newcommand{\varTitlepage}{environment/titlepage_modern}
+
+% Der Name der Datei für das Firmenlogo. Falls keins vorhanden ist wird es aber keinen Fehler geben.
+% Die Datei muss im Verzeichnis der Bilder liegen und wird ohne Endung hier angegeben.
+\newcommand{\varCompanyLogoFile}{logo_company}
+
+% Wenn environment/titlepage gewählt und \varCompanyLogoFile gesetzt ist
+% muss folgende Angabe an das Logo angepasst werden um die Bilder in die vertikale Mitte des Banners zu setzen
+% Der passende Wert kann von 25pt abweichen (am besten per trial-and-error herausfinden)
+%\newcommand{\varTitlepageLogoMarginTop}{25pt}
+
+% Schriftart: Times New Roman
+\renewcommand{\rmdefault}{ptm}
+
+% Ob in den Verzeichnissen eine deklarative Abkürzung stehen soll (zB. "Abb. 1")
+% Wenn es nicht gewollt ist muss die nächste Zeile auskommentiert werden.
+\newcommand{\varShowTitlesInLists}{true}
+
+% Klammern um die Jahresangabe in Fußnoten und im Literaturverzeichnis ausblenden
+% Wenn es nicht gewollt ist muss die nächste Zeile auskommentiert werden.
+%\renewcommand{\varNoParenthesesAroundYear}{true}
+
+% Ob noch vor dem Inhaltsverzeichnis ein Sperrvermerk angezeigt werden soll.
+% Der Sperrvermerk kann in environment/sperrvermerk.tex angepasst werden.
+% Wenn es nicht gewollt ist muss die nächste Zeile auskommentiert werden.
+\newcommand{\varShowBlockingNote}{true}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Silbentrennung ~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% Falls LaTeX Wörter nicht richtig trennt können hier eigene Angaben in folgendem Stil gemacht werden
+\hyphenation{Java-Script}

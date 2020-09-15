@@ -1,0 +1,201 @@
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ License ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% Siehe auch LICENCE.txt
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Präambel ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% Artikel-Klasse mit a4paper Option für die Seitenränder
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+% Zur Anpassung der Seitenränder
+\usepackage[a4paper,left=3cm,right=2cm,top=3cm,bottom=2.5cm]{geometry}
+
+% Zeilenabstände anpassen
+\usepackage{setspace}
+
+% Deutsch: https://de.overleaf.com/learn/German
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% Anführungszeichen unten: "`
+% Anführungszeichen oben: "'
+\usepackage{csquotes}
+
+% um Grafiken einzubinden, {Angabe des Pfades der Bilder}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+% zur korrekten Platzierung der Banner im Titelblatt
+\usepackage{chngpage}
+\usepackage{calc}
+\usepackage{float}
+
+% Automatisches Generieren von Hyperlinks bei Verweisen und URLs
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true,     % Colours links instead of ugly boxes
+  urlcolor     = black,    % Colour for external hyperlinks
+  linkcolor    = black,    % Colour of internal links
+  citecolor    = black     % Colour of citations
+}
+
+% sodass LoT, LoF und Literatur in ToC erscheint
+\usepackage[nottoc,numbib]{tocbibind}
+
+% Listingverzeichnis
+\usepackage{listings}
+\renewcommand{\lstlistlistingname}{Listingverzeichnis}
+
+% LoT und LoF nur ausgeben, wenn es Einträge gibt
+% Mit diesem Packet werden alle vorhandenen Grafiken, Tabellen und Listings gezählt
+\usepackage[figure,table,lstlisting]{totalcount}
+
+% Akronyme mit Einstellungen bezüglich Gestaltung des Verzeichnisses
+\usepackage[acronym, nogroupskip, nonumberlist, nopostdot]{glossaries}
+\loadglsentries{environment/acronym}
+\makenoidxglossaries
+\setacronymstyle{long-sc-short}
+
+% Einstellen von environments und captions
+\usepackage[hang]{footmisc}
+\usepackage{wrapfig}
+\usepackage[font=small, justification=centering]{caption}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=0cm}
+
+% Biblatex als Literaturverwaltung
+% Siehe auch die Datei biblatex.cfg
+% Dokumentation: https://ctan.kako-dev.de/macros/latex/contrib/biblatex/doc/biblatex.pdf
+\usepackage[style=ext-authoryear,     % ext- ermöglicht das Einblenden der Klammern um die Jahreszahl in Fußnoten
+            sorting=nyt,              % Nach Nachnamen des ersten genannten Autorens sortieren, dann Jahr, dann Titel
+            isbn=false,               % Ausblenden des Feldes
+            url=false,                % Ausblenden des Feldes
+            doi=false,                % Ausblenden des Feldes
+            eprint=false,             % Ausblenden des Feldes
+            maxcitenames=2,           % Ab drei Autoren mit "et at." abkürzen
+            maxbibnames=100]{biblatex}% Alle Autoren im Literaturverzeichnis ausschreiben
+
+% Einbinden der Literatureinträge
+\addbibresource{references.bib}
+
+% Zeilenumbrüche in Url bei jedem beliebigen Buchstaben,
+% um overfull H-Boxes im Literaturverzeichnis zu vermeiden
+\setcounter{biburllcpenalty}{1000}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Konfiguration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+% Projektspezifische Einstellungen laden
+% In dieser Datei müssen lediglich die vorgegebenen Variablen geändert werden
+\input{environment/config.tex}
+
+% Ob "Abb.", "Tbl." und "Lst." vor den Nummern der Verzeichnisse erscheinen
+\ifdefined\varShowTitlesInLists
+  \makeatletter
+  \renewcommand{\l@figure}[2]{\@dottedtocline{1}{1.5em}{2.3em}{Abb. #1}{#2}}
+  \renewcommand{\l@table}[2]{\@dottedtocline{1}{1.5em}{2.3em}{Tbl. #1}{#2}}
+  \renewcommand{\l@lstlisting}[2]{\@dottedtocline{1}{1.5em}{2.3em}{Lst. #1}{#2}}
+  \makeatother
+\fi
+
+% Ausblenden der Klammern um die Jahresangabe im Literaturverzeichnis
+\ifdefined\varNoParenthesesAroundYear
+  \makeatletter
+  \def\act@on@bibmacro#1#2{%
+    \expandafter#1\csname abx@macro@\detokenize{#2}\endcsname
+  }
+  \def\patchbibmacro{\act@on@bibmacro\patchcmd}
+  \def\pretobibmacro{\act@on@bibmacro\pretocmd}
+  \def\apptobibmacro{\act@on@bibmacro\apptocmd}
+  \def\showbibmacro{\act@on@bibmacro\show}
+  \makeatother
+
+  \patchbibmacro{date+extradate}{%
+  \printtext[parens]%
+  }{%
+  \setunit{\addperiod\space}%
+  \printtext%
+  }{}{}
+\fi
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Dokument ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+
+\begin{document}
+
+  % Titelblatt
+  \input{\varTitlepage}
+  \newpage
+
+  \ifdefined\varShowBlockingNote
+    \setstretch{1.2} 
+    \input{environment/sperrvermerk.tex}
+    \setstretch{1} 
+    \pagebreak
+  \fi
+
+  % Seitenzahlen auf große römische Zahlen umstellen
+  \pagenumbering{Roman}
+
+  % Inhaltsverzeichnis
+  \tableofcontents
+  \newpage
+  
+  % Abbildungsverzeichnis
+  \iftotalfigures
+    \listoffigures
+  \fi
+
+  % Tabellenverzeichnis
+  \iftotaltables
+    \listoftables
+  \fi
+
+  % Listingverzeichnis
+  \iftotallstlistings
+    \addcontentsline{toc}{section}{Listingverzeichnis}
+    \lstlistoflistings
+  \fi
+  \newpage
+
+  % Abkürzungsverzeichnis
+  \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+  \setstretch{0.5} 
+  \printnoidxglossary[type=acronym,sort=letter,style=listdotted,title=Abkürzungsverzeichnis]
+  \newpage
+
+  % Arabische Seitennummerierung für den Hauptteil
+  \pagenumbering{arabic}
+
+  % Um den Zeilenabstand der Wordvorlage anzupassen
+  \setstretch{1.2}
+  
+  % Inhalt der Arbeit -> Strukturierung in section/root
+  \input{sections/root}
+  \newpage
+
+  % Literaturverzeichnis
+  \setstretch{1.1} 
+  \sloppy
+  \hbadness=2000
+  \printbibliography[heading=bibintoc]
+  \newpage
+
+  % Persönliche Erklärung
+  \pagenumbering{gobble}
+  \input{environment/pers_erklaerung}
+
+\end{document}
