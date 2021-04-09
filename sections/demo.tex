@@ -7,13 +7,18 @@ Zeilenumbrüche in der PDF-Datei können entweder mittels zwei Zeilenumbrüche i
 oder durch doppelten Backslash wie vor dieser Zeile.
 
 \subsection{Fließelemente}
-  \begin{wrapfigure}{r}{0.45\linewidth}
-    \centering
-    \includegraphics[width=0.45\textwidth]{mvc}
-    % caption[im Verzeichnis]{unter der Abbildung}
-    \caption[Aufbau von \acrlong{MVC}]{Aufbau von \gls{MVC}.\\Quelle: Angelehnt an \cite{curry2008flexible}}
-    \label{fig_mvc}
-  \end{wrapfigure}
+  Diese umfassen Bilder, Tabellen sowie Listings.
+  Während sich das Beispiel für Listings im Anhang~\ref{appendix_dummy} befindet, zeigt dieses Kapitel die Nutzung der anderen Elemente auf.
+
+ \subsubsection{Bilder}
+    \begin{wrapfigure}{r}{0.45\linewidth}
+      \vspace{-30pt}
+      \centering
+      \includegraphics[width=0.45\textwidth]{mvc}
+      % caption[im Verzeichnis]{unter der Abbildung}
+      \caption[Aufbau von \acrlong{MVC}]{Aufbau von \gls{MVC}.\\Quelle: Angelehnt an \cite{curry2008flexible}}
+      \label{fig_mvc}
+    \end{wrapfigure}
     Bilder können sowohl als eigenständiges Blockelement, als auch mit dem Text in einer Zeile mit fließen.
     Jedoch entscheidet \LaTeX, wo genau die Bilder angezeigt werden, weshalb sie nicht unbedingt an der Stelle erscheinen,
     an der sie definiert wurden.
@@ -30,7 +35,7 @@ oder durch doppelten Backslash wie vor dieser Zeile.
 \subsubsection{Tabellen}
   Tabellen funktionieren wie die erste Art von Bildern; als fließendes Blockelement.
 
-  \begin{table}[bh]
+  \begin{table}[tb]
     \centering
     \begin{tabular}{@{}lcccccc@{}}
     \toprule
