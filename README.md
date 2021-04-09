@@ -1,9 +1,9 @@
 Template
 ===========
 
-Dieses Projekt stellt eine Hilfestellung zur Erfüllung des Leitfadens der [ASW - Berufsakademie Saarland e.V.](https://www.asw-berufsakademie.de/) dar.
-Es kann das Setup für wissenschaftliche Arbeiten jeglicher Art erleichtern, indem es eine grobe Struktur und einige Voreinstellungen festlegt und den Fokus der Nutzung auf das Verfassen der Arbeit selbst richtet.
-Zudem wird ein modernes Titelblatt zur Verfügung gestellt, welches sich durch ausfüllen von Variablen konfigurieren lässt.
+Dieses Projekt stellt eine Hilfestellung zur Erstellung wissenschaftlicher Arbeiten gemäß des Leitfadens der [ASW](https://www.asw-berufsakademie.de/) dar.
+Es kann das Setup für Arbeiten jeglicher Art erleichtern, indem es eine grobe Struktur und einige Voreinstellungen festlegt und den Fokus der Nutzung auf das Verfassen der Arbeit selbst richtet.
+Zudem wird ein modernes Titelblatt zur Verfügung gestellt, welches sich über Variablen konfigurieren lässt.
 
 Das Projekt ist unter der [Creative-Common-Lizenz 3](http://creativecommons.org/licenses/by-sa/3.0/de/) veröffentlicht.
 
@@ -13,20 +13,20 @@ Installation
 
 ### TeX-Distribution
 
-Um eine Arbeit in LaTeX zu schreiben muss eine Distribution auf dem Rechner installiert sein.
+Um eine Arbeit in LaTeX zu schreiben, muss eine Distribution auf dem Rechner installiert sein.
 
 Das Template wurde mit [TeX Live](https://www.tug.org/texlive/) entwickelt. Daher wird diese Distribution für die Arbeit mit dieser Vorlage empfohlen.
 
 
-### Entwicklungsumgebung
+### Entwicklungsumgebungen
 
-*   LaTeX funktioniert auch ganz ohne Entwicklungsumgebung über die Kommandozeile.
-*   Overleaf, ein Online LaTeX-Editor (mit eingeschränkter Funktionalität)
-*   Visual Studio Code
-    *   Extensions: [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) und [Spell Check](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-german)
-    *   Im Template befindet sich .vscode/settings.json für Einstellungen für diese beiden Extensions (wird automatisch erkannt und eingelesen)
-    * Die PDF lässt sich mittels Shortcut builden (Default: Strg+shift+B)
-    * Hier mal ein Einblick:![](images/vsc_latex_workshop.png)
+* LaTeX funktioniert auch ganz ohne Entwicklungsumgebung über die Kommandozeile.
+* [Overleaf](https://www.overleaf.com/), ein Online LaTeX-Editor (mit eingeschränkter Funktionalität)
+* Visual Studio Code
+    * Extensions: [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) und [Spell Check](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-german)
+    * Im Template befindet sich .vscode/settings.json für Einstellungen für diese beiden Extensions (wird automatisch erkannt und eingelesen)
+    * Die PDF-Datei lässt sich mittels Shortcut erstellen (Default: Strg+Shift+B)
+    * Hier ein Einblick: ![](images/vsc_latex_workshop.png)
 
 
 Erste Schritte
@@ -34,30 +34,30 @@ Erste Schritte
 
 ### LaTeX Einstieg
 
-Als blutiger Anfänger lohnt es sich zuerst über Tutorials Wissen zum Thema anzueignen. 
+Für blutige Anfänger lohnt es sich, zuerst über Tutorials Wissen zum Thema aufzubauen.
 Ein gutes Beispiel hierfür ist die [Serie von Overleaf](https://de.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure).
 
 
 ### Projekt
 
-Über GitHub kann das Repository zu einem eigenen Projekt geforkt werden (erfordert einen Account) oder als .zip heruntergeladen werden. 
+Über GitHub kann das Repository zu einem eigenen Projekt geforkt werden (erfordert einen Account) oder als .zip heruntergeladen werden.
 Dies kann dann als lokales Projekt entpackt oder aber auf Overleaf hochgeladen werden.
-Als erster Schritt ist es sinnvoll aus dem Projekt in dem aktuellen Zustand eine PDF erfolgreich zu generieren.
+Als erster Schritt ist es sinnvoll, aus dem Projekt in dem aktuellen Zustand eine PDF-Datei erfolgreich zu generieren.
 
 
 ### Projekteinstellungen
 
-Die ersten Änderungen sollten in der environment/config.tex getätigt werden. 
+Die ersten Änderungen sollten in der environment/config.tex getätigt werden.
 Hier können Informationen zur Arbeit hinterlegt und Konfigurationen bezüglich der Darstellung getroffen werden.
 Somit kann das Titelblatt auf ein modernes Aussehen konfiguriert werden und sieht wie folgt aus
 ![](images/titlepage_modern.png)
 
-Des Weiteren dient diese Datei um das Präambel manuell um arbeitsspezifische Einstellungen zu erweitern.
+Des Weiteren dient diese Datei dazu, die Präambel manuell arbeitsspezifische Einstellungen zu erweitern.
 
 
 ### Struktur anlegen
 
-Es ist empfehlenswert jedes Kapitel in eine eigene Datei auszulagern und die Struktur in sections/root festzulegen.
+Es ist empfehlenswert, jedes Kapitel in eine eigene Datei auszulagern und die Struktur in sections/root festzulegen.
   
 
 
@@ -96,7 +96,7 @@ int main(int argc,char **argv)
 ```
 
 Zu manchen Sprachen gibt es keinen direkten Support, wie zum Beispiel für JavaScript.
-Um diesen hinzuzufügen muss folgender Code im Präambel stehen. ([Referenz](https://tex.stackexchange.com/questions/89574/language-option-supported-in-listings))
+Um diesen hinzuzufügen muss folgender Code in der Präambel stehen. ([Referenz](https://tex.stackexchange.com/questions/89574/language-option-supported-in-listings))
 ```latex
 % Beispiel mit Farb-Codierung
 \usepackage{color}
@@ -160,11 +160,10 @@ Diese werden in environment/acronym.tex definiert:
 \newacronym[plural=RDBMS,firstplural=relationale Datenbankmanagementsysteme]{RDBMS}{RDBMS}{relationales Datenbankmanagementsystem}
 ```
 
-Im Text können die Abkürzungen folgendermaßen verwendet werden
+Im Text können die Abkürzungen folgendermaßen verwendet werden:
 
 ```latex
-% Gibt bei der ersten Verwendung die Langform aus und die Abkürzung in Klammern.
-% Danach die Abkürzung. 
+% Gibt bei der ersten Verwendung die Langform aus und die Abkürzung in Klammern, danach die Abkürzung.
 % \gls{key}
 \gls{RDBMS} 
 -> relationales Datenbankmanagementsystem (RDBMS)
@@ -177,7 +176,7 @@ Im Text können die Abkürzungen folgendermaßen verwendet werden
 \glspl{RDBMS} 
 -> relationale Datenbankmanagementsysteme (RDBMS)
 
-% Pluralform + erster Buchstabe groß
+% Pluralform und erster Buchstabe groß
 \Glspl{RDBMS} 
 -> Relationale Datenbankmanagementsysteme (RDBMS)
 
@@ -189,7 +188,7 @@ Im Text können die Abkürzungen folgendermaßen verwendet werden
 \acrshort{RDBMS} 
 -> RDBMS
 
-% Gibt unabhängig von vorheriger Verwendung die Langform und anschließender Abkürzung aus.
+% Gibt unabhängig von vorheriger Verwendung die Langform mit anschließender Abkürzung aus.
 \acrfull{RDBMS} 
 -> relationales Datenbankmanagementsystem (RDBMS)
 ```
@@ -197,7 +196,7 @@ Im Text können die Abkürzungen folgendermaßen verwendet werden
 
 ### Literaturverzeichnis
 
-Die Angaben in dem .bib-Format sollten immer überprüft werden
+Die Angaben im .bib-Format sollten immer überprüft werden
 
 *   Alle [Pflichtfelder](http://bib-it.sourceforge.net/help/fieldsAndEntryTypes.php) ausfüllen
 *   Bei der Angabe von Pages sollte "--" stehen
