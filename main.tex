@@ -72,6 +72,9 @@
 \usepackage{enumitem}
 \setlist[itemize]{itemsep=0cm}
 
+% Setzen von Abständen innerhalt von Fußnoten: für mehr Möglichkeiten siehe https://latex.org/forum/viewtopic.php?t=6781
+\renewcommand{\footnotemargin}{12pt}
+
 % Biblatex als Literaturverwaltung
 % Siehe auch die Datei biblatex.cfg
 % Dokumentation: https://ctan.kako-dev.de/macros/latex/contrib/biblatex/doc/biblatex.pdf
@@ -79,7 +82,7 @@
             sorting=nyt,              % Nach Nachnamen des ersten genannten Autorens sortieren, dann Jahr, dann Titel
             isbn=false,               % Ausblenden des Feldes
             url=false,                % Ausblenden des Feldes
-            doi=false,                % Ausblenden des Feldes
+            doi=true,                 % Einblenden des Feldes
             eprint=false,             % Ausblenden des Feldes
             maxcitenames=2,           % Ab drei Autoren mit "et at." abkürzen
             maxbibnames=100]{biblatex}% Alle Autoren im Literaturverzeichnis ausschreiben
