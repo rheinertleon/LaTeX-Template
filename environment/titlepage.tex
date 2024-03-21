@@ -1,4 +1,4 @@
-\newgeometry{top=3cm,bottom=3cm}
+\newgeometry{top=20mm,bottom=25mm}
 \makeatletter
 \begin{titlepage}
     \begin{figure}[t]
@@ -11,8 +11,16 @@
                   \includegraphics[width=\paperwidth]{titlepage/banner_top}}}%
             \endminipage
             
+            \vspace*{10mm}
             \minipage{0.1\paperwidth}
               \hfill
+            \endminipage
+            \minipage{0.25\paperwidth}
+              \vspace{\varTitlepageLogoMarginTop}
+              \includegraphics[width=\linewidth]{titlepage/logo_asw}
+            \endminipage
+            \minipage{0.3\paperwidth}
+                \hfill
             \endminipage
             \minipage{0.25\paperwidth}
                 \ifdefined\varCompanyLogoFile
@@ -20,14 +28,7 @@
                   \includegraphics[width=\linewidth]{\varCompanyLogoFile}
                 \else
                   \hfill
-                \fi             
-            \endminipage
-            \minipage{0.3\paperwidth}
-                \hfill
-            \endminipage
-            \minipage{0.25\paperwidth}
-              \vspace{\varTitlepageLogoMarginTop}    
-              \includegraphics[width=\linewidth]{titlepage/logo_asw}
+                \fi
             \endminipage
 
         \end{adjustwidth}
@@ -40,13 +41,13 @@
         \textbf{\@title}\\[2cm]
 
         \LARGE
-        \textbf{\@author}\\[0.5cm]
+        \strong{\@author}\\[0.5cm]
 
         \large
         Martrikelnummer: \varMartrikelnummer \\[0.5cm]
 
         \Large
-        \varArbeit im Studiengang\\
+        \varArbeit{} im Studiengang\\
         \varStudiengang
     \end{flushleft}
 

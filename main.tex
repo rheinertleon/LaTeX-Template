@@ -188,14 +188,19 @@
   
   % Inhalt der Arbeit -> Strukturierung in section/root
   \input{sections/root}
-  \newpage
+  \clearpage
 
   % Literaturverzeichnis
-  \setstretch{1.1} 
+  \setstretch{1.1}
   \sloppy
   \hbadness=2000
   \printbibliography[heading=bibintoc]
-  \newpage
+  \clearpage
+
+  % Anhang
+  \appendix
+  \input{sections/appendix}
+  \clearpage
 
   % Persönliche Erklärung
   \pagenumbering{gobble}

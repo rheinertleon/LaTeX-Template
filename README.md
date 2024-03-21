@@ -1,7 +1,7 @@
 Template
 ===========
 
-Dieses Projekt stellt eine Hilfestellung zur Erstellung wissenschaftlicher Arbeiten gemäß des Leitfadens der [ASW](https://www.asw-berufsakademie.de/) dar.
+Dieses Projekt stellt eine Hilfestellung zur Erstellung wissenschaftlicher Arbeiten gemäß des Leitfadens der [ASW](https://www.asw-ggmbh.de/) dar.
 Es kann das Setup für Arbeiten jeglicher Art erleichtern, indem es eine grobe Struktur und einige Voreinstellungen festlegt und den Fokus der Nutzung auf das Verfassen der Arbeit selbst richtet.
 Zudem wird ein modernes Titelblatt zur Verfügung gestellt, welches sich über Variablen konfigurieren lässt.
 
