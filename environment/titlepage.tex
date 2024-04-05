@@ -16,7 +16,6 @@
               \hfill
             \endminipage
             \minipage{0.25\paperwidth}
-              \vspace{\varTitlepageLogoMarginTop}
               \includegraphics[width=\linewidth]{titlepage/logo_asw}
             \endminipage
             \minipage{0.3\paperwidth}
@@ -24,7 +23,6 @@
             \endminipage
             \minipage{0.25\paperwidth}
                 \ifdefined\varCompanyLogoFile
-                  \vspace{\varTitlepageLogoMarginTop}
                   \includegraphics[width=\linewidth]{\varCompanyLogoFile}
                 \else
                   \hfill
@@ -41,7 +39,7 @@
         \textbf{\@title}\\[2cm]
 
         \LARGE
-        \strong{\@author}\\[0.5cm]
+        {\@author}\\[0.5cm]
 
         \large
         Martrikelnummer: \varMartrikelnummer \\[0.5cm]

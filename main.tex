@@ -143,15 +143,15 @@
   \input{\varTitlepage}
   \newpage
 
+  % Seitenzahlen auf große römische Zahlen umstellen
+  \pagenumbering{Roman}
+
   \ifdefined\varShowBlockingNote
     \setstretch{1.2} 
     \input{environment/sperrvermerk.tex}
     \setstretch{1} 
     \pagebreak
   \fi
-
-  % Seitenzahlen auf große römische Zahlen umstellen
-  \pagenumbering{Roman}
 
   % Inhaltsverzeichnis
   \tableofcontents
@@ -191,9 +191,6 @@
   \clearpage
 
   % Literaturverzeichnis
-  \setstretch{1.1}
-  \sloppy
-  \hbadness=2000
   \printbibliography[heading=bibintoc]
   \clearpage
 
