@@ -68,6 +68,16 @@
 % Wenn es nicht gewollt ist muss die nächste Zeile auskommentiert werden.
 \newcommand{\varShowBlockingNote}{true}
 
+% Gemäß Leitfaden der ASW soll nur in Bachelorarbeiten ein Seitenumbruch vor
+% einem neuen Abschnitt gemacht werden.
+\newcommand{\bachelorarbeit}{Bachelorarbeit}
+\newcommand{\conditionalPageBreak}{%
+  \ifdefined\varArbeit
+    \ifx\varArbeit\bachelorarbeit
+      \clearpage%
+    \fi
+  \fi
+}
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~ Silbentrennung ~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
