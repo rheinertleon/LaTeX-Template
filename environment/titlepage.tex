@@ -53,8 +53,10 @@
     \vspace{0.5cm}
 
     \begin{flushright}
-        Betrieblicher Betreuer\\
-        \varBetrBetreuer\\[0.5cm]
+        \ifdefvoid{\varBetrBetreuer}{}{%
+            Betrieblicher Betreuer\\
+            \varBetrBetreuer\\[0.5cm]
+        }%
 
         ASW-Gutachter\\
         \varASWGutachter\\[0.5cm]
