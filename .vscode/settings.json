@@ -27,8 +27,8 @@
             "args": [
                 "/c", 
                 "copy",  
-                "%OUTDIR%\\%DOCFILE%.pdf", 
-                "%DIR%",
+                "%OUTDIR_W32%\\%DOCFILE%.pdf",
+                "%DIR_W32%",
             ],
             "env": {}
         },
