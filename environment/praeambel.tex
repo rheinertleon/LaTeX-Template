@@ -75,6 +75,10 @@
             backref=true,             % Rückreferenzen vom Literaturverzeichnis in den Text
             maxbibnames=100]{biblatex}% Alle Autoren im Literaturverzeichnis ausschreiben
 
+\DefineBibliographyStrings{german}{
+  backrefpage={zitiert auf S\addperiod},
+  backrefpages={zitiert auf S\addperiod}
+}
 
 % Einbinden der Literatureinträge
 \addbibresource{references.bib}
